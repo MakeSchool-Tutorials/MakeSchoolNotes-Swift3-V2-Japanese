@@ -22,7 +22,7 @@ Twitterは縦にスクロールができるレイアウトを使っています�
 左側には、`UITableView`の _frame_ が見えます。このテーブルビューの中に、`UITableViewCell`でできたツイートがみられますね。
 
 > [info]
-実は、`UITableView`は多くのことができます。カスタマイズをしてヘッダーを加えたり、いくつかのセクションを加えたりすることができます。このチュートリアルでは、基本の使い方に縛りますが、もし興味がある人は[こちら](https://www.makeschool.com/tutorials/swift-concepts-explained/table-views)をチェックしてみましょう。
+実は、`UITableView`は多くのことができます。カスタマイズをしてヘッダーを加えたり、いくつかのセクションを加えたりすることができます。このチュートリアルでは、基本の使い方に縛りますが、もし興味がある人は[こちら(英語)](https://www.makeschool.com/tutorials/swift-concepts-explained/table-views)をチェックしてみましょう。
 
 次に、`UITableView`の作り方を見てみましょう。
 
@@ -109,13 +109,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 1. テーブルビューは10つのテーブルビューセルを表示する。
 1. テーブルビューセルを返す。加えて、`UITableViewCell`はデフォルトでセルのindex pathを表示する設定にする。
 
-<!--> [info]
-There's a little more happening behind there scenes here!
->
-1. First, our `UITableView` is using the _delegate pattern_ to communicate with the `UITableViewController`. As we've already mentioned, the table view needs to know the number of cells to display and cell instance for each index path. The _delegate pattern_ provides a specific way for one object to communicate with another. Usually, we'd have to set this up manually, but our `UITableViewController` does this for us behind the scenes. You can learn more about the _delegate pattern_ by clicking [here](https://www.makeschool.com/tutorials/swift-concepts-explained/delegates).
-1. When we retrieve our `UITableViewCell` instance, we use the method `dequeueReusableCell(withIdentifier:for:)` to retrieve the instance of our `UITableViewCell` at a specific index path. This method hides some optimizations that determine if the table view will reuse a previously created cell or initialize a new cell instance. This prevents our app from creating a potentially infinite number of cells as we keep scrolling!
-1. Finally, let's discuss the table view cell's identifier. The identifier is a unique string that allows us to connect our code to the correct `UITableViewCell` subclass. Before running our app, we'll need to set our identifier in our storyboard.
--->
+
 ## Cell IDを設定する
 
 テーブルビューセルを繋ぐために、セルのIDを設定する必要があります。

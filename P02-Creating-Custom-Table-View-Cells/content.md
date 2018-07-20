@@ -165,7 +165,7 @@ _Assistant Editor_　に`ListNotesTableViewCell.swift`とストーリーボー�
     - _Title Label_: `noteTitleLabel`
     - _Last Modified Timestamp_: `noteModificationTimeLabel`
 
-_Assistant Editor_ を終了し、_Standard editor_ へ切り替えましょう
+_Assistant Editor_ を終了し、_Standard editor_ へ切り替えましょう。
 
 `IBOutlet`を作ったことによって、これで`ListNotesTableViewCell`からラベルにアクセスができるようになりました！
 

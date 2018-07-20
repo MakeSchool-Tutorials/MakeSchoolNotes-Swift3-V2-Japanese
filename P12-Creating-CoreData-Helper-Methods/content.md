@@ -68,26 +68,19 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 }
 ```
 >
-In the code above, we simply use optional chaining to address our `modificationTime` being changed to type `Date?`. In addition, we use the nil-coalescing operator to provide a default value if `modificationTime` is `nil`.
 上のコードでは、シンプルにオプショナルチェイニングを使って、`modificationTime`を`Date?`型に変換しています。また、`modificationTime`が`nil`だったときにNil Coalescing Operatorを使ってデフォルトの値を設定しています。
 
-Next, let's move on to creating our helper methods!
 
-# Creating Helper Methods
 # ヘルパーメソッドを作成する
 
 > [action]
-Create a new, empty Swift file called `CoreDataHelper.swift` in the _Helpers_ group.
 _Helpers_ グループに`CoreDataHelper.swift`ファイルを作成しましょう。
 
-In our new `CoreDataHelper.swift` file, we'll create class methods that we can use to add, update, retrieve, and delete notes.
 `CoreDataHelper.swift`ファイルに、ノートの追加、アップデート、取得、削除をするメソッドを作成します。
 
-First, to use the _Core Data_ framework, we'll need to add the correct import statements at the top of the source file.
 まずは _Core Data_ を使うために、インポートをする必要があります。
 
 > [action]
-In `CoreDataHelper.swift`, import the `UIKit` and `CoreData` frameworks:
 `CoreDataHelper.swift`で、`UIKit`と`CoreData`をインポートしましょう:
 >
 ```
@@ -95,11 +88,9 @@ import UIKit
 import CoreData
 ```
 
-Next, we'll create a class constant using the `static` keyword to access our app's managed object context:
 次に、`static`を使ってコンスタントクラスを作り、managed object context へアクセスできるようにします。
 
 > [action]
-In `CoreDataHelper.swift`, add the following code:
 `CoreDataHelper.swift`で、下のコードを加えましょう:
 >
 ```
@@ -117,39 +108,30 @@ struct CoreDataHelper {
 }
 ```
 >
-In the code above, we create a computed class variable that gets a reference to our app delegate's managed object context. We can use our reference to our `NSManagedObjectContext` to create, edit and delete `NSManagedObject` objects.
 上のコードでは、computedクラス値を作っています。これはアプリのdelegate managed object contextを参照するものです。`NSManagedObjectContext`を参照して`NSManagedObject`オブジェクトを作成、編集、削除します。
 
-## Creating Class Methods
 ## クラスメソッドを作成する
 
-Class methods are methods that can be called directly on the class, without having to instantiate an instance of the class first. In Swift, we can create class methods by placing the `static` keyword in front of our function definition.
 クラスメソッドはクラスで直接呼び出せるメソッドで、インスタンス化が必要ありません。Swiftでは、`static`を使うことでクラスメソッドを作ることができます。
 
-For example, if we want to create a class method called `doSomething()` in our `CoreDataHelper` object, we can call this method with the following code:
-例えば、`CoreDataHelper`オブジェクトに`doSomething()`と呼ばれるクラスメソッドを作成したい場合、下のコードのようにこのメソッドを呼びだすことがでキアmす。
+例えば、`CoreDataHelper`オブジェクトに`doSomething()`と呼ばれるクラスメソッドを作成したい場合、下のコードのようにこのメソッドを呼びだすことができます。
 
 ```
 CoreDataHelper.doSomething()
 ```
 
-If we created `doSomething()` as a instance method, we would need to first create an instance of the object first:
 `doSomething()`をインスタンスメソッドとして作った場合、まず下のようなインスタンス化が必要です。
 
 ```
 let helper = CoreDataHelper()
 helper.doSomething()
 ```
-Let's get started by creating our first class method for creating new notes!
 
-## Creating Notes
 ## ノートの作成
 
-We want to define a static method that creates a new note object, and then returns it.
 staticメソッドを定義して新しいノートを作成し返すようにします。
 
 > [action]
-In `CoreDataHelper`, create a static method that creates a new `Note` instance:
 `CoreDataHelper`で、`Note`インスタンスを生成するstaticメソッドを作成します。
 >
 ```
@@ -160,26 +142,20 @@ static func newNote() -> Note {
 }
 ```
 
-Easy enough! Try the next one on your own.
 簡単ですね！
 
-## Saving Notes
 ## ノートを保存する
 
-We want to define a static method that saves that note to the default `NSManagedObjectContext`.
 デフォルトの`NSManagedObjectContext`へノートを保存するstaticメソッドを定義します。
 
 > [challenge]
-Following what we learned creating class methods and saving `NSManagedObject` instances with _Core Data_, try creating a new class method named `saveNote` in `CoreDataHelper` to save notes.
 `CoreDataHelper`に`saveNote`クラスメソッドを書いてみましょう。
 >
-If you get stuck, try looking back at our previous example of creating our `newNote()` class method or how to save data using _Core Data_ in the previous section.
 困ったら、`newNote()`の例を見返してみましょう。
 
 <!-- break -->
 
 > [solution]
-Your class method for saving notes should look like the following:
 下のようになるはずです:
 >
 ```
@@ -192,20 +168,16 @@ static func saveNote() {
 }
 ```
 
-## Deleting Notes
 ## ノートの削除
 
-We want to define a static method takes a `Note` object a parameter and  deletes that note from our `NSManagedObjectContext`.
 `Note`オブジェクトをパラメタにもつstaticメソッドを定義して、`NSManagedObjectContext`からノートを削除するようにしましょう。
 
 > [challenge]
-Try creating a new class method named `delete(note:)` in `CoreDataHelper` to delete a given note.
 `CoreDataHelper`に`delete(note:)`というクラスメソッドを作ってみましょう。
 
 <!-- break -->
 
 > [solution]
-Your class method for deleting a given note should look like the following:
 下のようになるはずです。
 >
 ```
@@ -216,20 +188,16 @@ static func delete(note: Note) {
 }
 ```
 
-## Retrieve Notes
 ## ノートを取得する
 
-Last, we want to define a static method that retrieves all notes from our `NSManagedObjectContext`. Unlike the other helper methods, this one should return an array of `Note` objects.
 最後に、`NSManagedObjectContext`から全てのノートを取得するstaticメソッドを定義します。他のヘルパーメソッドと違い、これは`Note`オブジェクトの配列を返す必要があります。
 
 > [action]
-Try creating a new class method named `retrieveNotes()` in `CoreDataHelper` the retrieves all previous existing notes from our `NSManagedObjectContext`.
 `CoreDataHelper`に`retrieveNotes()`というクラスメソッドを作り、`NSManagedObjectContext`から存在するノートを取得するようにしましょう。
 
 <!-- break -->
 
 > [solution]
-Your class method for retrieving a existing notes should look like the following:
 下のようになるはずです:
 >
 ```
@@ -247,8 +215,6 @@ static func retrieveNotes() -> [Note] {
 }
 ```
 
-# Wrapping Up
 # おわりに
 
-We've created a lot of useful helper methods to help us easily integrate and use _Core Data_ in our project. Next, let's use our `CoreDataHelper` to finish implementing persistence!
 たくさんのヘルパーメソッドを作りましたね！次は、`CoreDataHelper`を使ってデータの永続性を実装しましょう！

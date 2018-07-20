@@ -68,7 +68,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 1. `UITableView`のプロパティである`indexPathForSelectedRow`を使って、テーブルビューの選択された列のindex pathを取得します。これを`notes`配列からデータを取り出すのに使用します。
 1. index pathを使って、ノートを取り出します。
 1. セグエの目的地のビューコントローラを参照します。これにより、`DisplayNoteViewController`の`note`プロパティを設定できます。
-1. 目的地のビューコントローラーの参照を使って、`note`プロパティを選択したノートに設定シアmす。
+1. 目的地のビューコントローラーの参照を使って、`note`プロパティを選択したノートに設定します。
 
 # ノートを表示する
 
@@ -102,7 +102,7 @@ override func viewWillAppear(_ animated: Bool) {
 >
 1. 存在するノートの`note`プロパティをチェックします。（if-letを使っています)
 1. `note`プロパティがnilでなければ、`DisplayNoteViewController`がテキストフィールドとテキストビューをノートの中身に合わせて生成します。
-1. `note`プロパティが`nil`だったら、`DisplayNoteViewController`がlorem ipsumのダミーテキストを削除して、ノートの作成が簡単になるようjにします。
+1. `note`プロパティが`nil`だったら、`DisplayNoteViewController`がlorem ipsumのダミーテキストを削除して、ノートの作成が簡単になるようにします。
 
 # 編集を保存する
 
@@ -179,7 +179,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 上のコードがやっていること:
 >
 1. if-let文を加えて、セグエの目的地が`ListNotesTableViewController`タイプかを確認します。これでセグエの目的地のビューコントローラーが安全にtype castされて、Switch文を使うことができるようになります。
-1. `save`を二つの条件に分けています。初めの方は、存在するノートを保存する場合です。`DisplayNoteViewController`の`notes`を確認することで、ノートが存在しているかを確認することができるのです。もしノートが存在していたら、プロパティを`ListNotesTableViewController`のテーブルビューをリロードします。
+1. `save`を二つの条件に分けています。初めの方は、存在するノートを保存する場合です。`DisplayNoteViewController`の`notes`を確認することで、ノートが存在しているかを確認することができるのです。もしノートが存在していたら、プロパティを設定した上で`ListNotesTableViewController`のテーブルビューをリロードします。
 1. `note`プロパティが`nil`だったら、ユーザーは新しいノートを作っていることになります。このケースでは、前回作ったコードを再利用して新しいノートを作るようにします。
 1. guardステートメントで目的地のビューコントローラを型変換しているので、このビューコントローラをdowncastingすることなく使うことができます。
 

@@ -7,8 +7,7 @@ slug: adding-notes
 
 # View Controller セットアップ
 
-テキストフィールドとテキストフィールドに対して、`IBOutlet`を作リます。これらの`IBOutlet`は、テキストフィールドとテキストビューをコード上で参照するのに必要です。
-Here we go again...
+テキストフィールドとテキストフィールドに対して、`IBOutlet`を作ります。これらの`IBOutlet`は、テキストフィールドとテキストビューをコード上で参照するのに必要です。
 
 > [challenge]
 _Assistant Editor_ を使って、`DisplayNoteViewController`の中のテキストフィールドとテキストビューに`IBOutlet`を追加しましょう。
@@ -51,8 +50,7 @@ override func viewWillAppear(_ animated: Bool) {
 これで、初めてのノートを作成する準備ができました。
 
 > [action]
-In `DisplayNoteViewController`, update the following code to `prepare(for:sender:)`:
-`DisplayNoteViewController`で、`prepare(for:sender:)`に下のコードを書き換えましょう。
+`DisplayNoteViewController`で、`prepare(for:sender:)`を下のコードに書き換えましょう。
 >
 ```
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -124,7 +122,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 ## テーブルビューのデータソースを再読み込みする
 
-saveバーをタップすると、新しく作られたノートが`ListNotesTableViewController`のnote配列に追加されます。最後に、`UITableView`に追加されたことを知らせる必要があります。。`UITableView`のメソッドの`reloadData()`を使います。
+saveバーボタンをタップすると、新しく作られたノートが`ListNotesTableViewController`のnote配列に追加されます。最後に、`UITableView`に追加されたことを知らせる必要があります。。`UITableView`のメソッドの`reloadData()`を使います。
 
 > [info]
 テーブルビューは、テーブルビューセルUIを自動的にアップデートしてくれません。もしテーブルビューをアップデートしたい場合は、テーブルビューに変更を通知する必要があるのです。
@@ -133,7 +131,7 @@ saveバーをタップすると、新しく作られたノートが`ListNotesTab
 
 でも、いつテーブルビューにそのデータを知らせればよいのでしょう？
 
-Property observers(プロパティオブザーバー)の出番です。Property Observersを使うと、プロパティが変更されたときに実行されるコードを書くことができます。
+Property observer(プロパティオブザーバー)の出番です。Property Observerを使うと、プロパティが変更されたときに実行されるコードを書くことができます。
 
 
 > [action]

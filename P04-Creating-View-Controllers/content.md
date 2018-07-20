@@ -5,13 +5,13 @@ slug: creating-view-controllers
 
 _ノート_ アプリでは、テーブルビューコントローラーにノートのリストが表示されています。ノートをクリックすると、`DisplayNoteViewController`が _push_ されるように設定していきます。
 
-まずは`DisplayNoteViewController`を設定する必要があります。新しいビューコントローラをストーリーボードに追加しましょう。
+まずは`DisplayNoteViewController`を設定する必要があります。新しいビューコントローラーをストーリーボードに追加しましょう。
 
 > [action]
 `Main.storyboard` で、新しいビューコントローラーを追加します:
 >
 1. _Object Library_ からビューコントローラーをドラックしてストーリーボードに追加します。テーブルビューコントローラの右側に追加しましょう。
-1. 新しく追加したビューコントーラーを選択します。
+1. 新しく追加したビューコントローラーを選択します。
 1. _Identity Inspector_ へ移動します。
 1. _Class_ の中で、`DisplayNoteViewController`をカスタムクラスに設定します。
 >

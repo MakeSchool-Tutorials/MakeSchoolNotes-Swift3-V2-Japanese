@@ -5,7 +5,7 @@ slug: intro-segues
 
 `DisplayNoteViewController`を設定して、`UINavigationController`の機能を実装することができるようになりました。
 
-ナビゲ＝ションコントローラーは _segues(セグエ)_ を使って、ビューを移動します。_segues(セグエ)_ は 前のページで説明した _push_ と _pop_ を可能にします。
+ナビゲーションコントローラーは _segues(セグエ)_ を使って、ビューを移動します。_segues(セグエ)_ は 前のページで説明した _push_ と _pop_ を可能にします。
 
 # セグエを作る
 

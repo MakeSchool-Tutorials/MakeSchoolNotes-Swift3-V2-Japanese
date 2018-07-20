@@ -3,7 +3,7 @@ title: "おめでとう！"
 slug: congratulations
 ---
 
-おめでとうございあmす！Make Schoolノートを作りました！
+おめでとうございます！Make Schoolノートを作りました！
 
 このチュートリアルで学んだこと:
 
