@@ -62,7 +62,7 @@ class Person {
 > [action]
 _Project Navigator_ に新しい、空のSwiftファイルを作りましょう。
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Make+School+Notes/p07_introduction_to_data_models/create_notes_file.mp4)
+![ms-video](https://s3.amazonaws.com/mgwu-misc/Make+School+Notes/p07_introduction_to_data_models/create_notes_file.mov)
 >
 ステップ:
 >

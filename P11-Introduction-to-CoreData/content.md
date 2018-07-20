@@ -97,8 +97,7 @@ do {
 > [info]
 `try` キーワードは、`save()`を`NSManagedObjectContext`で呼び出すことは失敗するかもしれず、その時はエラーを出します。このケースでは、`save()`が失敗したときに必要な命令を書くことができます。
 >
-do/try/catchに興味がある人は、下の教材を見て知識を深めましょう。
- [講義スライド（英語）](https://www.makeschool.com/tutorials/advanced-ios-development/error-handling-swift) もしくは [公式ドキュメント（英語）](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html).
+do/try/catchに興味がある人は、[講義スライド（英語）](https://www.makeschool.com/tutorials/advanced-ios-development/error-handling-swift) もしくは [公式ドキュメント（英語）](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)を見て知識を深めましょう。
 
 ## NSManagedObjectを保存する
 

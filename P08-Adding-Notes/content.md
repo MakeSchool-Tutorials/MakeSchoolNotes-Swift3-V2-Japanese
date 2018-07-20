@@ -107,10 +107,10 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         destination.notes.append(note)
 >
     case "cancel":
-        print("cancel bar button item tapped")
+        print("キャンセルボタンがタップされました")
 >
     default:
-        print("unexpected segue identifier")
+        print("予期しないsegue identifierです")
     }
 }
 ```
